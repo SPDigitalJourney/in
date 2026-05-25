@@ -1,384 +1,94 @@
-/* Basic Reset & Body Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #fff;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
-}
-
-.py-5 { padding: 5rem 0; }
-.py-4 { padding: 4rem 0; }
-.mb-0 { margin-bottom: 0 !important; }
-.mt-4 { margin-top: 2rem !important; }
-.ml-3 { margin-left: 1.5rem !important; }
-.text-center { text-align: center; }
-.bg-light { background: #f8f9fa; }
-.bg-dark { background: #343a40; }
-.bg-primary { background: #ffc107; /* Amber/Yellow for primary actions */ }
-.text-white { color: #fff; }
-.lead { font-size: 1.25rem; margin-bottom: 1rem; }
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    color: #fff;
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-    border: none;
-}
-
-.btn-primary {
-    background: #ffc107; /* Amber */
-    color: #333; /* Dark text on primary */
-}
-
-.btn-primary:hover {
-    background: #e0a800;
-}
-
-.btn-secondary {
-    background: #007bff; /* Blue */
-}
-
-.btn-secondary:hover {
-    background: #0056b3;
-}
-
-.btn-tertiary {
-    background: #6c757d; /* Gray */
-}
-
-.btn-tertiary:hover {
-    background: #5a6268;
-}
-
-.btn-dark {
-    background: #343a40;
-}
-
-.btn-dark:hover {
-    background: #23272b;
-}
-
-.btn-white {
-    background: #fff;
-    color: #333;
-}
-.btn-white:hover {
-    background: #f1f1f1;
-}
-
-/* Header & Navigation */
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #ffc107;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 25px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.05rem;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #ffc107;
-}
-
-header nav ul li .btn-primary {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-}
-
-
-/* Hero Section */
-#hero {
-    position: relative;
-    height: 80vh; /* Adjust as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    overflow: hidden; /* Important for background image */
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/hero-gym.jpg') no-repeat center center/cover;
-    filter: brightness(60%); /* Darken image for text readability */
-    z-index: 1;
-}
-
-#hero .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    max-width: 800px;
-}
-
-#hero h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4.5rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
-}
-
-#hero h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    color: #ffc107;
-}
-
-#hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-}
-
-.hero-buttons .btn {
-    font-size: 1.1rem;
-    padding: 1rem 2.5rem;
-    margin: 0 10px;
-}
-
-
-/* Feature Grid */
-#features {
-    background: #f4f4f4;
-}
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    text-align: center;
-}
-
-.feature-item img {
-    width: 80px; /* Adjust icon size */
-    margin-bottom: 15px;
-}
-
-.feature-item h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-/* Class Grid */
-.class-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 3rem;
-}
-
-.class-item {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.class-item:hover {
-    transform: translateY(-5px);
-}
-
-.class-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.class-item h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    margin: 15px 0 5px;
-    color: #ffc107;
-}
-
-.class-item p {
-    padding: 0 15px 20px;
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Promo Bar */
-#promo .btn-white {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.9rem;
-    border-radius: 3px;
-    margin-left: 20px;
-}
-#promo p {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-/* Contact Section */
-#contact .btn-lg {
-    padding: 1rem 3rem;
-    font-size: 1.2rem;
-}
-#contact .btn-lg.ml-3 { /* override default ml-3 for this specific btn group */
-    margin-left: 1.5rem;
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: #ccc;
-    font-size: 0.9rem;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.footer-col .logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #ffc107;
-    margin-bottom: 15px;
-}
-
-.footer-col h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 8px;
-}
-
-.footer-col ul li a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    color: #ffc107;
-}
-
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons img {
-    width: 30px;
-    margin-right: 15px;
-    transition: transform 0.3s ease;
-}
-.social-icons img:hover {
-    transform: scale(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lead Capture Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-    header nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      width: 400px;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease-in-out;
     }
-    header nav ul li {
-        margin: 0 10px 10px;
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #25D366;
+      text-shadow: 0 0 10px #25D366;
     }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: background 0.3s;
+    }
+    input:focus, textarea:focus {
+      background: rgba(255,255,255,0.2);
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #25D366;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.6);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form id="leadForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Your Phone Number" required>
+      <textarea id="purpose" placeholder="Purpose of Contact" required></textarea>
+      <button type="submit">Submit via WhatsApp</button>
+    </form>
+  </div>
 
-    #hero h1 {
-        font-size: 3rem;
-    }
-    #hero h2 {
-        font-size: 1.5rem;
-    }
-    .hero-buttons .btn {
-        display: block;
-        margin: 15px auto;
-        width: 80%;
-    }
+  <script>
+    document.getElementById("leadForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let purpose = document.getElementById("purpose").value;
 
-    .feature-grid, .class-grid, .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    #promo p {
-        display: block;
-        margin-bottom: 15px;
-    }
-    #promo .btn-white {
-        margin-left: 0;
-    }
-
-    #contact .btn-lg {
-        display: block;
-        margin: 15px auto;
-        width: 80%;
-    }
-    #contact .btn-lg.ml-3 {
-        margin-left: auto; /* Reset for mobile */
-    }
-}
+      let message = `Name: ${name}%0APhone: ${phone}%0APurpose: ${purpose}`;
+      let whatsappURL = `https://wa.me/7799423794?text=${message}`;
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
+</body>
+</html>
