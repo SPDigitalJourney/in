@@ -1,295 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPDigitalJourney | Google Maps & Local SEO Expert</title>
-    <style>
-        :root {
-            --primary: #4285F4; /* Google Blue */
-            --accent: #34A853;  /* Google Green */
-            --dark: #121212;
-            --card-bg: #1e1e1e;
-            --text-main: #ffffff;
-            --text-muted: #b0b0b0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SP Digital Journey - Get in Touch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--dark);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
 
-        /* --- Navigation --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            background: rgba(18, 18, 18, 0.95);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-        }
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 500px;
+      overflow: hidden;
+      animation: slideUp 0.6s ease-out;
+    }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
 
-        .logo-area span {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
 
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-        }
+    .header p {
+      font-size: 14px;
+      opacity: 0.95;
+      font-weight: 300;
+    }
 
-        .btn-audit {
-            background: var(--primary);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .content {
+      padding: 40px 30px;
+    }
 
-        /* --- Hero Section --- */
-        .hero {
-            padding: 100px 5% 60px;
-            text-align: center;
-            background: radial-gradient(circle at top right, #1a237e, transparent);
-        }
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-        .hero h1 span {
-            color: var(--primary);
-        }
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #e0e6ed;
+      border-radius: 6px;
+      background: #fafbfc;
+      color: #333;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.3s ease;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
+    input:focus, textarea:focus {
+      border-color: #667eea;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
 
-        /* --- Clock & Stats --- */
-        .stats-bar {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 20px;
-            background: var(--card-bg);
-            border-top: 1px solid #333;
-            flex-wrap: wrap;
-        }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
 
-        .stat-item {
-            text-align: center;
-        }
+    input::placeholder, textarea::placeholder {
+      color: #999;
+    }
 
-        .stat-item b {
-            display: block;
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
+    .error-message {
+      display: none;
+      font-size: 12px;
+      color: #e74c3c;
+      margin-top: 5px;
+    }
 
-        /* --- Modules Section --- */
-        .section-title {
-            text-align: center;
-            margin: 60px 0 40px;
-        }
+    .error-message.show {
+      display: block;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 0 5%;
-        }
+    button {
+      width: 100%;
+      padding: 14px 20px;
+      margin-top: 25px;
+      border: none;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
 
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-            border: 1px solid #333;
-        }
+    button:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
+    button:active:not(:disabled) {
+      transform: translateY(0);
+    }
 
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
+    button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
 
-        /* --- Pricing --- */
-        .pricing-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 0 5%;
-            flex-wrap: wrap;
-        }
+    .button-text {
+      display: inline;
+    }
 
-        .price-card {
-            background: #252525;
-            padding: 40px;
-            border-radius: 15px;
-            width: 300px;
-            text-align: center;
-            border: 2px solid transparent;
-        }
+    .spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-right: 8px;
+    }
 
-        .price-card.featured {
-            border-color: var(--primary);
-            transform: scale(1.05);
-        }
+    .spinner.show {
+      display: inline-block;
+    }
 
-        .price-card h2 {
-            font-size: 2.5rem;
-            margin: 10px 0;
-        }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
 
-        /* --- Footer --- */
-        footer {
-            margin-top: 80px;
-            padding: 60px 5%;
-            background: #0a0a0a;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        #sb-time { color: var(--accent); font-weight: bold; }
+    .info-text {
+      font-size: 12px;
+      color: #777;
+      margin-top: 15px;
+      text-align: center;
+      line-height: 1.5;
+    }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-        }
-    </style>
+    .success-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      border: 1px solid #c3e6cb;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: slideUp 0.3s ease-out;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .header {
+        padding: 30px 20px;
+      }
+
+      .header h1 {
+        font-size: 24px;
+      }
+
+      .content {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>Get in Touch</h1>
+      <p>We'd love to hear from you. Send us a message on WhatsApp.</p>
+    </div>
 
-    <nav>
-        <div class="logo-area">
-            <span>SPDigitalJourney</span>
-        </div>
-        <div class="nav-links">
-            <a href="#system">The System</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#about">About</a>
-            <a href="#" class="btn-audit">Free Audit</a>
-        </div>
-    </nav>
+    <div class="content">
+      <div class="success-message" id="successMessage">
+        ✓ Redirecting to WhatsApp...
+      </div>
 
-    <header class="hero">
-        <div id="live-clock" style="margin-bottom: 20px; font-size: 0.9rem;">
-            IST · Bengaluru: <span id="sb-date"></span> | <span id="sb-time"></span>
-            <br>🟢 Available now — reply within 2 hrs
+      <form id="leadForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required>
+          <div class="error-message" id="nameError"></div>
         </div>
-        <h1>Local customers find the <span>#1 result.</span><br>Make it yours.</h1>
-        <p>SPDigitalJourney puts Bengaluru businesses at the top of Google Maps — driving daily calls, walk-ins, and leads from customers ready to buy.</p>
-        <a href="#" class="btn-audit" style="padding: 15px 30px; font-size: 1.1rem;">Get Free Visibility Audit</a>
-    </header>
 
-    <section class="stats-bar">
-        <div class="stat-item"><b>2,000+</b> Locations Mapped</div>
-        <div class="stat-item"><b>100+</b> Cities in India</div>
-        <div class="stat-item"><b>Since 2007</b> Maps Insider</div>
-        <div class="stat-item"><b>MSME</b> Registered</div>
-    </section>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+          <div class="error-message" id="phoneError"></div>
+        </div>
 
-    <section id="system">
-        <div class="section-title">
-            <p style="color: var(--primary); text-transform: uppercase; letter-spacing: 2px;">The System</p>
-            <h2>Google Maps Domination System</h2>
+        <div class="form-group">
+          <label for="purpose">Message</label>
+          <textarea id="purpose" name="purpose" placeholder="Tell us about your project or inquiry..." required></textarea>
+          <div class="error-message" id="purposeError"></div>
         </div>
-        <div class="grid">
-            <div class="card">
-                <h3>01. GBP Optimisation</h3>
-                <p>Primary & secondary category correction, keyword-optimised descriptions, and attribute setup for Bengaluru search intent.</p>
-            </div>
-            <div class="card">
-                <h3>02. Review Growth</h3>
-                <p>A structured system to build volume, monitor quality, and respond professionally to strengthen trust signals.</p>
-            </div>
-            <div class="card">
-                <h3>03. Local SEO</h3>
-                <p>Local citations, gap analysis, and geo-targeting to push your listing into the "Local Pack" top 3.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="pricing">
-        <div class="section-title">
-            <h2>Transparent Pricing</h2>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <p>Visibility Audit</p>
-                <h2>₹10,000</h2>
-                <p>One-time audit across 8 ranking factors.</p>
-            </div>
-            <div class="price-card featured">
-                <p>Growth System</p>
-                <h2>₹50,000</h2>
-                <p>Complete 6-module implementation over 30 days.</p>
-            </div>
-            <div class="price-card">
-                <p>Monthly Retainer</p>
-                <h2>₹15,000</h2>
-                <p>Weekly posts, review monitoring, and rank tracking.</p>
-            </div>
-        </div>
-    </section>
+        <button type="submit">
+          <span class="spinner" id="spinner"></span>
+          <span class="button-text" id="buttonText">Send via WhatsApp</span>
+        </button>
 
-    <footer>
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
-            <div style="max-width: 300px;">
-                <h3 style="color: white;">SPDigitalJourney</h3>
-                <p>Google Maps & Local Visibility Specialist. Helping Bengaluru businesses dominate local search.</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <p><a href="#" style="color: var(--text-muted);">Case Studies</a></p>
-                <p><a href="#" style="color: var(--text-muted);">Free Consultation</a></p>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <p>rpsanjaypaul@gmail.com</p>
-                <p>Bengaluru, Karnataka 560107</p>
-            </div>
+        <div class="info-text">
+          💬 We'll respond to your WhatsApp message as soon as possible
         </div>
-        <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
-        <p style="text-align: center;">&copy; 2026 SPDigitalJourney · MSME UDYAM-KR-02-0117946</p>
-    </footer>
+      </form>
+    </div>
+  </div>
 
-    <script>
-        function updateClock() {
-            var now = new Date(), options = { timeZone: "Asia/Kolkata" };
-            var timeEl = document.getElementById("sb-time");
-            var dateEl = document.getElementById("sb-date");
-            if(timeEl) timeEl.textContent = now.toLocaleTimeString("en-IN", Object.assign({}, options, { hour: "2-digit", minute: "2-digit", hour12: true }));
-            if(dateEl) dateEl.textContent = now.toLocaleDateString("en-IN", Object.assign({}, options, { weekday: "short", day: "numeric", month: "short" }));
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
+  <script>
+    const form = document.getElementById("leadForm");
+    const submitBtn = form.querySelector("button");
+    const spinner = document.getElementById("spinner");
+    const buttonText = document.getElementById("buttonText");
+    const successMessage = document.getElementById("successMessage");
+
+    // Form validation
+    function validateForm() {
+      let isValid = true;
+
+      // Validate name
+      const name = document.getElementById("name").value.trim();
+      const nameError = document.getElementById("nameError");
+      if (!name || name.length < 2) {
+        nameError.textContent = "Please enter a valid name";
+        nameError.classList.add("show");
+        isValid = false;
+      } else {
+        nameError.classList.remove("show");
+      }
+
+      // Validate phone
+      const phone = document.getElementById("phone").value.trim();
+      const phoneError = document.getElementById("phoneError");
+      const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+      if (!phone || !phoneRegex.test(phone) || phone.replace(/\D/g, "").length < 7) {
+        phoneError.textContent = "Please enter a valid phone number";
+        phoneError.classList.add("show");
+        isValid = false;
+      } else {
+        phoneError.classList.remove("show");
+      }
+
+      // Validate message
+      const purpose = document.getElementById("purpose").value.trim();
+      const purposeError = document.getElementById("purposeError");
+      if (!purpose || purpose.length < 5) {
+        purposeError.textContent = "Please enter a message (at least 5 characters)";
+        purposeError.classList.add("show");
+        isValid = false;
+      } else {
+        purposeError.classList.remove("show");
+      }
+
+      return isValid;
+    }
+
+    // Clear error on input
+    document.getElementById("name").addEventListener("input", function() {
+      document.getElementById("nameError").classList.remove("show");
+    });
+
+    document.getElementById("phone").addEventListener("input", function() {
+      document.getElementById("phoneError").classList.remove("show");
+    });
+
+    document.getElementById("purpose").addEventListener("input", function() {
+      document.getElementById("purposeError").classList.remove("show");
+    });
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const purpose = document.getElementById("purpose").value.trim();
+
+      // Show loading state
+      submitBtn.disabled = true;
+      spinner.classList.add("show");
+      buttonText.textContent = "Opening WhatsApp...";
+      successMessage.classList.add("show");
+
+      // Create WhatsApp message
+      const message = `Hello! I'd like to get in touch.\n\nName: ${name}\nPhone: ${phone}\n\nMessage: ${purpose}`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/7799423794?text=${encodedMessage}`;
+
+      // Open WhatsApp after a brief delay for better UX
+      setTimeout(() => {
+        window.open(whatsappURL, "_blank");
+
+        // Reset form after a delay
+        setTimeout(() => {
+          form.reset();
+          submitBtn.disabled = false;
+          spinner.classList.remove("show");
+          buttonText.textContent = "Send via WhatsApp";
+          successMessage.classList.remove("show");
+        }, 1000);
+      }, 300);
+    });
+  </script>
 </body>
 </html>
