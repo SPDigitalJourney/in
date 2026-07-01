@@ -3,288 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SP Digital Journey | Digital Marketing & Local SEO Expert</title>
+    <title>SPDigitalJourney | Google Maps & Local SEO Expert Bengaluru</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Base Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            color: #333;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        /* Header */
-        header {
-            background-color: #ffffff;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0056b3;
-        }
-        .logo span {
-            color: #ff5722;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        nav ul li {
-            margin-left: 30px;
-        }
-        nav ul li a {
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #0056b3;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0056b3 0%, #002d62 100%);
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            margin-top: 60px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        .cta-btn {
-            background-color: #ff5722;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
-        }
-        .cta-btn:hover {
-            background-color: #e64a19;
-            transform: translateY(-2px);
-        }
-
-        /* Section Global Layout */
-        section {
-            padding: 80px 10%;
-            text-align: center;
-        }
-        section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        section h2::after {
-            content: '';
-            width: 50%;
-            height: 4px;
-            background-color: #ff5722;
-            position: absolute;
-            bottom: -10px;
-            left: 25%;
-            border-radius: 2px;
-        }
-
-        /* About Section */
-        .about p {
-            max-width: 800px;
-            margin: 40px auto 0 auto;
-            font-size: 18px;
-            color: #555;
-        }
-
-        /* Services Section */
-        .services {
-            background-color: #f1f5f9;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        .service-card {
-            background-color: #fff;
-            padding: 40px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: #0056b3;
-        }
-        .service-card p {
-            color: #666;
-            font-size: 15px;
-        }
-
-        /* Contact Section */
-        .contact form {
-            max-width: 600px;
-            margin: 40px auto 0 auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        .form-group textarea {
-            resize: vertical;
-            height: 120px;
-        }
-        .submit-btn {
-            background-color: #0056b3;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.3s;
-        }
-        .submit-btn:hover {
-            background-color: #004085;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header { padding: 15px 5%; }
-            nav ul { display: none; } /* Kept simple for a core single-page draft */
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
-            section { padding: 60px 5%; }
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900">
 
-    <header>
-        <div class="logo">SP<span>DigitalJourney</span></div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-2xl font-bold text-blue-700">SPDigitalJourney</div>
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="#services" class="hover:text-blue-600">Services</a>
+                    <a href="#about" class="hover:text-blue-600">About</a>
+                    <a href="#reviews" class="hover:text-blue-600">Reviews</a>
+                    <a href="tel:+917942548372" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="bg-blue-500 text-sm font-bold px-4 py-1 rounded-full uppercase tracking-widest">Ex-Google Maps Insider</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mt-6 leading-tight">
+                Dominate Local Search & <br><span class="text-blue-200">Crush Your Competition</span>
+            </h1>
+            <p class="mt-6 text-xl text-blue-100 max-w-2xl mx-auto">
+                Stop being invisible. We help Bengaluru businesses rank #1 on Google Maps using proven insider strategies.
+            </p>
+            <div class="mt-10 flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-gray-100 transition">Get Free SEO Audit</a>
+                <a href="https://wa.me/919067" class="bg-green-500 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-green-600 transition">
+                    <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
     </header>
 
-    <div class="hero" id="hero">
-        <h1>Your Next Digital Leap Starts Here</h1>
-        <p>Tailored digital marketing strategies and elite Local SEO solutions constructed to scale your brand effectively.</p>
-        <a href="#contact" class="cta-btn">Grow Your Business</a>
-    </div>
-
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>At SP Digital Journey, we bridge the gap between businesses and their online potential. We deliver highly-experienced, fast, and remarkably budget-friendly solutions aimed at establishing a powerful online footprint for enterprises of all horizons.</p>
-    </section>
-
-    <section class="services" id="services">
-        <h2>Our Expert Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Local SEO Strategy</h3>
-                <p>Enhance local search footprint to drive direct high-intent customers right to your doorstep.</p>
+    <!-- Trust Stats -->
+    <section class="py-12 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-3xl font-bold text-blue-600">15+</div>
+                <div class="text-gray-500">Years Experience</div>
             </div>
-            <div class="service-card">
-                <h3>Lead Generation</h3>
-                <p>Nurture high-converting campaigns designed to fuel sustainable inbound client growth.</p>
+            <div>
+                <div class="text-3xl font-bold text-blue-600">5.0</div>
+                <div class="text-gray-500">Google Rating</div>
             </div>
-            <div class="service-card">
-                <h3>Social Media Growth</h3>
-                <p>Strategic positioning and creative content asset curation across Instagram, Facebook, and LinkedIn.</p>
+            <div>
+                <div class="text-3xl font-bold text-blue-600">180</div>
+                <div class="text-gray-500">Min Web Setup</div>
             </div>
-            <div class="service-card">
-                <h3>Omnichannel Reach</h3>
-                <p>Synchronize brand voice globally across specialized SMS, WhatsApp, and targeted content ecosystems.</p>
+            <div>
+                <div class="text-3xl font-bold text-blue-600">Ex-Googler</div>
+                <div class="text-gray-500">Insider Knowledge</div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <h2>Get in Touch</h2>
-        <form action="#" method="POST" onsubmit="alert('Thank you for reaching out to SP Digital Journey! We will contact you shortly.'); return false;">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Your Name" required>
+    <!-- Services -->
+    <section id="services" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-16">Our Specialized Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Google Maps Ranking</h3>
+                    <p class="text-gray-600">Complete optimization of your Google Business Profile to hit the "Local 3-Pack" in Bengaluru.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-unlock-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Suspension Recovery</h3>
+                    <p class="text-gray-600">Is your profile suspended? We use insider white-hat methods to get you back online fast.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-bolt"></i></div>
+                    <h3 class="text-xl font-bold mb-3">180-Min Website</h3>
+                    <p class="text-gray-600">Get a professional, SEO-ready landing page live in just 3 hours. Fast, clean, and converting.</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Your Email Address" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Project Requirements</label>
-                <textarea id="message" placeholder="Tell us about your digital goals..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Send Enquiry</button>
-        </form>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 SP Digital Journey. All Rights Reserved. | Partnered with Udyam MSME</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 px-4">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold mb-6">Meet Sanjay Paul</h2>
+                <p class="text-lg text-gray-700 mb-4">
+                    With over 15 years in the Google ecosystem, I was part of the **2007 Google Maps Pilot Batch**. 
+                </p>
+                <p class="text-lg text-gray-700 mb-6">
+                    I don't just guess what works; I know how the algorithm thinks. My mission is to help local businesses in Achit Nagar and beyond achieve digital dominance.
+                </p>
+                <ul class="space-y-3">
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Google Maps Expert</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Local SEO Strategist</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> 360° Street View Specialist</li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 bg-blue-600 h-64 w-full rounded-2xl flex items-center justify-center text-white text-6xl">
+                <i class="fas fa-user-tie"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-3xl mx-auto bg-white p-10 rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-8">Ready to Rank #1?</h2>
+            <form action="#" method="POST" class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    <input type="email" placeholder="Email Address" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                </div>
+                <input type="text" placeholder="Business Name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                <textarea placeholder="Tell us about your business" rows="4" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                <button type="submit" class="w-full bg-blue-700 text-white py-4 rounded-lg font-bold hover:bg-blue-800 transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">SPDigitalJourney</h3>
+                <p class="text-gray-400">Achit Nagar, Soladevanahalli, Bengaluru, Karnataka 560107</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact</h3>
+                <p class="text-gray-400">Phone: +91 7942548372</p>
+                <p class="text-gray-400">Expertise: Local SEO & Google Maps</p>
+            </div>
+            <div class="flex space-x-4 text-2xl">
+                <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-gray-800 pt-8 text-gray-500 text-sm">
+            &copy; 2025 SPDigitalJourney. All rights reserved.
+        </div>
     </footer>
 
 </body>
